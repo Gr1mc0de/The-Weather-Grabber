@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>The Weather Grabber</title>
+        <link rel="stylesheet" href="weather-style.css" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <header>
+            <a class="main-heading" href="index.html">
+                <img class="logo" src="i/weather-grabber.png">
+                <h1>THE WEATHER GRABBER</h1>
+            </a>
+            <h4 onclick="displayAbout()">About</h4>
+            <div class="about">
+                <p>Hi, I'm Grimc0de and I've created this weather app with the <a href="https://openweathermap.org/api" target="_blank">OpenWeather</a> API.</p>
+                <p>Find more about my work @</p>
+                <a href="https://github.com/Gr1mc0de" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/grimc0de" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </header>
+        <main>
+            <div class="weather-bot">
+                <img class="bot" src="i/weather-bot.png" onclick="speak()">
+                <img class="speech-bubble" src="i/speech-bubble.png">
+                <p class="bot-speech">Hi, I am The Weather Grabber's Bot! Tell me any city in the world and I'll go check if it's raining for ya...</p>
+            </div>
+            <div class="weather-bot-error">
+                <img class="error-bot" src="i/weather-bot.png">
+                <img class="error-bubble" src="i/speech-bubble.png">
+                <p class="speech-error">Looks like you've sent me on a wild goose chase... Feel free to try again with a valid location.</p>
+            </div>
+            <div class="weather">
+                <div>
+                    <h1 class="weather-h1">City: <span id="city"></span></h1>
+                    <img id="weather-icon">
+                </div>
+                <div class="caption-1">
+                    <p>Country: <span id="country"></span> <span class="bullet">&#8226;</span></p>
+                    <p>Latitude: <span id="latitude"></span>&deg; <span class="bullet">&#8226;</span></p>
+                    <p>Longitude: <span id="longitude"></span>&deg;</p>
+                </div>
+                <h1 class="weather-h1">Temperature: <div><span id="temperature-celcius"></span> (&#8451;) / <span id="temperature-farenheit"></span> (&#8457;)</div></h1>
+                <div class="caption-2">
+                    <p>Feels like: <span id="feels-like-celcius"></span> (&#8451;) / <span id="feels-like-farenheit"></span> (&#8457;) <span class="bullet">&#8226;</span></p>
+                    <p>Min: <span id="min-celcius"></span> (&#8451;) / <span id="min-farenheit"></span> (&#8457;) <span class="bullet">&#8226;</span></p>
+                    <p>Max: <span id="max-celcius"></span> (&#8451;) / <span id="max-farenheit"></span> (&#8457;)</p>
+                </div>
+                <h1 class="weather-h1">Weather condition: <span id="condition"></span></h1>
+                <div class="caption-3">
+                    <p>Cloudiness: <span id="cloudiness"></span>% <span class="bullet">&#8226;</span></p>
+                    <p>Visibility: <span id="visibility-metric"></span> km / <span id="visibility-imperial"></span> mi</p>
+                </div>
+                <div class="caption-3">
+                    <p>Wind speed: <span id="wind-speed-metric"></span> m/s / <span id="wind-speed-imperial"></span> mph <span class="bullet">&#8226;</span></p>
+                    <p>Wind direction: <span id="wind-direction"></span>&deg;</p>
+                </div>
+                <div class="caption-3">
+                    <p>Atmospheric pressure: <span id="pressure"></span> hPa <span class="bullet">&#8226;</span></p>
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <form>
+                <input placeholder="Enter city name">
+                <button type="submit"><img src="i/weather-grabber.png"></button>
+            </form>
+            <div class="space-div">
+                <img class="earth" src="i/earth.png">
+                <img onclick="speakSpaceBot()" class="space-bot" src="i/weather-bot.png">
+                <img class="space-bubble" src="i/speech-bubble.png">
+                <p class="space-speech">Wanna have another go? I'm always ready to take a trip!</p>
+            </div>
+        </footer>
+        <script src="weather-script.js"></script>
+    </body>
+</html>
