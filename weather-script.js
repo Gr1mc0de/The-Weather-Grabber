@@ -12,7 +12,7 @@ function speakSpaceBot() {
     document.querySelector(".space-speech").classList.toggle("space-speech-display");
 }
 
-const apiKey = "bdb709f27095083d8e46db2e3ba5d9d9";
+const apiKey = "OpenWeather API Key"
 var search = "";
 var cityForm = document.querySelector("form");
 var cityInput = document.querySelector("input");
