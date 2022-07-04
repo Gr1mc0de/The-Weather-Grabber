@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #233155;
+    transition: all 2s;
+}
+
+@import url(components/Header/Header.css);
+

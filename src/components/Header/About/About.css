@@ -1,0 +1,36 @@
+.about {
+    z-index: 1;
+    position: absolute;
+    top: -150px;
+    right: 0px;
+    width: 150px;
+    padding: 20px 10px;
+    background: url(../../../i/clouds.png);
+    background-size: 555%;
+    background-color: #233155;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+    animation: about 125s linear 0s infinite;
+    opacity: 0;
+    transition: opacity 2.5s, top 0s linear 2.5s;
+}
+
+@keyframes about {
+    0% {background-position: 50% 100%;}
+    50% {background-position: 50% 0%;}
+    100% {background-position: 50% 100%;}
+}
+
+.about-display {
+    top: 85px;
+    opacity: 100%;
+    transition: opacity 2.5s;
+}
+
+.i {
+    color: #fff;
+}

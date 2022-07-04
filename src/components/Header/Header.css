@@ -1,0 +1,48 @@
+header {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    background: url(../../i/clouds.png);
+    background-size: 100%;
+    animation: header 111s linear 0s infinite;
+    transition: background-size 2s linear;
+}
+
+@keyframes header {
+    0% {background-position: 50% 0%;}
+    50% {background-position: 50% 100%;}
+    100% {background-position: 50% 0%;}
+}
+
+.main-heading {
+    display: flex;
+    align-items: center;
+    font-family: Helvetica;
+    font-size: 10.5px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px #fff;
+}
+
+.main-heading:hover,
+h4:hover {
+    text-decoration: none;
+    filter: brightness(66%);
+    cursor: pointer;
+}
+
+.logo {
+    width: 38.9px;
+    margin-right: 9px;
+}
+
+h4 {
+    font-family: Helvetica;
+    color: #fff;
+}
+
+@import url(About/About.css);
