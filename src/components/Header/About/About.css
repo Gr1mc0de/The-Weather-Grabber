@@ -31,6 +31,13 @@
     transition: opacity 2.5s;
 }
 
+.about a:hover {
+    text-decoration: none;
+    filter: brightness(66%);
+    cursor: pointer;
+}
+
 .i {
     color: #fff;
+    margin: auto 2.9px;
 }

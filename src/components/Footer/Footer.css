@@ -1,0 +1,18 @@
+footer {
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 19px;
+    background: url(../../i/clouds0.png);
+    background-size: 100%;
+    animation: footer 175s linear 0s infinite;
+    filter: brightness(95%);
+    transition: background-size 2s linear;
+}
+
+@keyframes footer {
+    0% {background-position: 50% 0%;}
+    50% {background-position: 50% 100%;}
+    100% {background-position: 50% 0%;}
+}
