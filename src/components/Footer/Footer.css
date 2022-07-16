@@ -16,3 +16,47 @@ footer {
     50% {background-position: 50% 100%;}
     100% {background-position: 50% 0%;}
 }
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 166px;
+    height: 32.5px;
+    padding-right: 9px;
+    padding-left: 9px;
+    background: url(../../i/clouds0.png);
+    background-size: cover;
+    font-family: Helvetica;
+    color: #fff;
+    border-radius: 9px;
+    animation: main 175s linear 0s infinite;
+    filter: brightness(75%);
+}
+
+input::placeholder {
+    color: #fff;
+    font-style: italic;
+}
+
+button {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-left: 9px;
+    background: url(../../i/clouds.png);
+    background-size: cover;
+    border-radius: 100%;
+    animation: header 11s linear 0s infinite;
+    opacity: 95%;
+}
+
+button img {
+    width: 70%;
+}
+
+button:hover {
+    cursor: pointer;
+}
