@@ -40,27 +40,40 @@ export default function App() {
           footer: null
         });
       } else {
-        setWeatherBot({
-          main: (
-            <div className='weather'>
-              <div>
-                <h1 className="weather-h1">City: <span id="city">{data.name}</span></h1>
-                <img id="weather-icon" src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}/>
+        const city = data.name;
+        const icon = data.weather[0].icon;
+        const country = data.sys.country;
+        const lat = data.coord.lat;
+        const lon = data.coord.lon;
+        //const temperature = data.main.temp;
+        const feels = data.main.feels_like;
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
+        .then(response => response.json())
+        .then(data=>{
+          const temperature = data.current.temp;
+          const min = data.daily[0].temp.min;
+          const max = data.daily[0].temp.max;
+          setWeatherBot({
+            main: (
+              <div className='weather'>
+                <div>
+                  <h1 className="weather-h1">City: <span id="city">{city}</span></h1>
+                  <img id="weather-icon" src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/>
+                </div>
+                <div className="caption-1">
+                  <p>Country: <span id="country">{country}</span> <span class="bullet">&#8226;</span></p>
+                  <p>Latitude: <span id="latitude">{lat}</span>&deg; <span class="bullet">&#8226;</span></p>
+                  <p>Longitude: <span id="longitude">{lon}</span>&deg;</p>
+                </div>
+                <h1 className="weather-h1">Temperature: <div><span id="temperature-celcius">{temperature}</span> (&#8451;) / <span id="temperature-farenheit">{(temperature * 1.8 + 32).toFixed(2)}</span> (&#8457;)</div></h1>
+                <div className="caption-2">
+                  <p>Feels like: <span id="feels-like-celcius">{feels}</span> (&#8451;) / <span id="feels-like-farenheit">{(feels * 1.8 + 32).toFixed(2)}</span> (&#8457;) <span class="bullet">&#8226;</span></p>
+                  {min} {max}
+                </div>
               </div>
-              <div className="caption-1">
-                <p>Country: <span id="country">{data.sys.country}</span> <span class="bullet">&#8226;</span></p>
-                <p>Latitude: <span id="latitude">{data.coord.lat}</span>&deg; <span class="bullet">&#8226;</span></p>
-                <p>Longitude: <span id="longitude">{data.coord.lon}</span>&deg;</p>
-              </div>
-              <h1 className="weather-h1">Temperature: <div><span id="temperature-celcius">{data.main.temp}</span> (&#8451;) / <span id="temperature-farenheit">{(data.main.temp * 1.8 + 32).toFixed(2)}</span> (&#8457;)</div></h1>
-              <div class="caption-2">
-                <p>Feels like: <span id="feels-like-celcius">{data.main.feels_like}</span> (&#8451;) / <span id="feels-like-farenheit">{(data.main.feels_like * 1.8 + 32).toFixed(2)}</span> (&#8457;) <span class="bullet">&#8226;</span></p>
-                <p>Min: <span id="min-celcius"></span> (&#8451;) / <span id="min-farenheit"></span> (&#8457;) <span class="bullet">&#8226;</span></p>
-                <p>Max: <span id="max-celcius"></span> (&#8451;) / <span id="max-farenheit"></span> (&#8457;)</p>
-              </div>
-            </div>
-          ),
-          footer: null
+            ),
+            footer: null
+          });
         });
       }
     });
